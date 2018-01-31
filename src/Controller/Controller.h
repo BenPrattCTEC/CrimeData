@@ -9,9 +9,7 @@
 #define SRC_CONTROLLER_CONTROLLER_H_
 
 #include <iostream>
-#include "../Model/ConsoleOutput.h"
-#include "../Model/Arrays.h"
-#include "../Model/VectorAssignment.h"
+#include <vector>
 
 using namespace std;
 
