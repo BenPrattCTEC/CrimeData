@@ -10,6 +10,9 @@
 
 #include <iostream>
 #include <vector>
+#include "../Util/Timer.h"
+#include "../Util/CrimeData.h"
+#include "../Util/Util.h"
 
 using namespace std;
 
@@ -18,6 +21,10 @@ public:
 	Controller();
 	void start();
 	virtual ~Controller();
+	void findMaxAndMin();
+
+private:
+	vector<CrimeData> crimeData;
 };
 
 #endif /* SRC_CONTROLLER_CONTROLLER_H_ */
