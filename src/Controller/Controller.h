@@ -10,8 +10,9 @@
 
 #include <iostream>
 #include <vector>
+
+#include "../Model/CrimeData.h"
 #include "../Util/Timer.h"
-#include "../Util/CrimeData.h"
 #include "../Util/Util.h"
 
 using namespace std;

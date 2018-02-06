@@ -15,7 +15,8 @@
 //#include <mutex>
 //#include <cmath>
 
-#include "CrimeData.h"
+
+#include "../Model/CrimeData.h"
 
 #ifndef MODEL_UTIL_H_
 #define MODEL_UTIL_H_

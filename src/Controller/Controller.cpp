@@ -32,7 +32,7 @@ void Controller::findMaxAndMin(){
 	int minIndex = 0;
 	int maxIndex = 0;
 
-	for(unsigned int i = 1; i<crimeData.size(); i++){
+	for(unsigned int i = 0; i<crimeData.size(); i++){
 		if(crimeData[minIndex] > crimeData[i]){
 			minIndex = i;
 		}

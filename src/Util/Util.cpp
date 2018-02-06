@@ -33,7 +33,7 @@ string Util::readFile(string file) {
 	fileStream.close();
 
 	if (ss.str().size() == 0) {
-		cout << file << " Was empty, Exiting..." << endl;
+		cout << file << " Was empty or does not exist" << endl;
 		exit(1);
 	}
 
@@ -43,7 +43,7 @@ string Util::readFile(string file) {
 vector<CrimeData> Util::fileToCrimeDataVector(string file) {
 	std::vector<CrimeData> crimeVector;
 	string line;
-	istringstream fileText(Util::readFile(file));
+	istringstream fileText(readFile(file));
 
 	//throw out header line
 	getline(fileText, line);
