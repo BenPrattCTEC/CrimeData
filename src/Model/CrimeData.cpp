@@ -6,7 +6,7 @@
 //  Copyright © 2017 CTEC. All rights reserved.
 //
 
-#include "../Model/CrimeData.h"
+#include "CrimeData.h"
 
 CrimeData :: CrimeData(string currentCSVLine)
 {
