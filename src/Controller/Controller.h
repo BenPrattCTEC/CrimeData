@@ -14,6 +14,8 @@
 #include "../Model/CrimeData.h"
 #include "../Util/Timer.h"
 #include "../Util/Util.h"
+#include "../tests/RecursionTester.h"
+#include "../tests/SortingTester.h"
 
 using namespace std;
 

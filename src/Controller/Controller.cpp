@@ -13,13 +13,20 @@ Controller::Controller() {
 }
 
 void Controller::start(){
-	Timer readTimer;
-	readTimer.startTimer();
-	crimeData = Util::fileToCrimeDataVector("/home/ben/eclipse-workspaceCTEC-C++/CrimeData/crime.csv");
-	readTimer.stopTimer();
-	readTimer.displayInformation();
-	cout << "Finding max and min" << endl;
-	findMaxAndMin();
+//	Timer readTimer;
+//	readTimer.startTimer();
+//	crimeData = Util::fileToCrimeDataVector("/home/ben/eclipse-workspaceCTEC-C++/CrimeData/crime.csv");
+//	readTimer.stopTimer();
+//	readTimer.displayInformation();
+//	cout << "Finding max and min" << endl;
+//	findMaxAndMin();
+//
+//	RecursionTester recursion;
+//	recursion.testRecursionNumbers();
+	SortingTester sort;
+	sort.testSorts();
+
+
 }
 
 

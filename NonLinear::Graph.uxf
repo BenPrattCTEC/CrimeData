@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>220</y>
+      <w>620</w>
+      <h>580</h>
+    </coordinates>
+    <panel_attributes>Nonlinear::Graph
+--
+-MAX: int
+-adjencyMartix: bool[][]
+-weightCostMartic: int[][]
+graphData: Type[]
+vertedCount: int
+--
+Graph(): constructor
++addVertex(const Type&amp; value)
+
+Connect verticies
++addEdge(int source, int target)
++addEdgeUndirected(int source, int taget)
++addEdgeCost(int source, int target)
+
+Disconnect Verticies
++removeEdge(int source, int target)
++removeEdgeUndirected(int source, int target)
++removeEdgeCost(int source, int target)
+
+Accessors
++operator[](int vertex): Type&amp;
++operator[](int vertex): Type const
++size(): int
+
+Check connections
++hasUndirectedConnection(int source, int target)
++areConneced(int source, int target): bool
++neighbors(int vertex): const std::set&lt;int&gt;
+
+Traversals
++depthFirstTraversal(Graph&lt;Type&gt;&amp; graph, int vertex)
++breadthFirstTraversal(Graph&lt;Type&gt;&amp; graph, int vertex)
++costFirstTraversal(Graph&lt;Type&gt;&amp; graph, int vertex
+depthFirstTraversal(Graph&lt;Type&gt;&amp; graph, int vertex, boolmarkedVerticies[])</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
