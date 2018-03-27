@@ -7,6 +7,7 @@
 
 #include "Controller.h"
 
+
 Controller::Controller() {
 	// TODO Auto-generated constructor stub
 
@@ -23,9 +24,12 @@ void Controller::start(){
 //
 //	RecursionTester recursion;
 //	recursion.testRecursionNumbers();
-	SortingTester sort;
-	sort.testSorts();
 
+//	SortingTester sort;
+//	sort.testSorts();
+
+	GraphTester graph;
+	graph.testGraphs();
 
 }
 

@@ -16,6 +16,7 @@
 #include "../Util/Util.h"
 #include "../tests/RecursionTester.h"
 #include "../tests/SortingTester.h"
+#include "../tests/GraphTester.h"
 
 using namespace std;
 

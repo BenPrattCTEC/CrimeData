@@ -18,15 +18,15 @@ using namespace std;
 template<class Type>
 class Graph {
 private:
-	static const int MAXIMUM = 20;
+	static const int MAXIMUM = 50;
 	bool adjacencyMatrix[MAXIMUM][MAXIMUM];
 	int weightCostMatrix[MAXIMUM][MAXIMUM];
 	Type graphData[MAXIMUM];
 	int vertexCount;
-	void depthFirstTraversal(Graph<Type>& graph, int vertex, bool markedVerticies[])
+	void depthFirstTraversal(Graph<Type>& graph, int vertex, bool markedVerticies[]);
 public:
 	Graph();
-	virtual ~Graph();
+//	virtual ~Graph();
 
 	void addVertex(const Type& value);
 
@@ -165,6 +165,7 @@ void Graph<Type>::depthFirstTraversal(Graph<Type>&currentGraph, int vertex){
 	assert(vertex<currentGraph.size());
 	fill_n(visitedVerticies, currentGraph.size(), false);
 	depthFirstTraversal(currentGraph, vertex, visitedVerticies);
+	cout << endl;
 }
 
 template<class Type>
@@ -173,10 +174,10 @@ void Graph<Type>::depthFirstTraversal(Graph<Type>& currentGraph, int vertex, boo
 	set<int>::iterator setIterator;
 
 	visited[vertex] = true;
-	cout << currentGraph[vertex] << ", " << endl;
+	cout << currentGraph[vertex] << "";
 
 	for(setIterator = connections.begin(); setIterator !=connections.end(); setIterator++){
-		if(!visited[setIterator]){
+		if(!visited[*setIterator]){
 			depthFirstTraversal(currentGraph, *setIterator, visited);
 		}
 	}
@@ -190,10 +191,39 @@ int Graph<Type>::costTraversal(Graph<Type>& currentGraph, int vertex){
 	set<int> connections;
 	set<int>::iterator setIterator;
 	queue<int> vertexQueue;
+	int currentIndex;
 
 	fill_n(visited, currentGraph.size(), false);
 	visited[vertex] = true;
 
+	vertexQueue.push(vertex);
+	currentIndex = vertexQueue.front();
+	while(!vertexQueue.empty()){
+		connections = currentGraph.neighbors(currentIndex);
+		vertexQueue.pop();
+
+		for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++){
+			if(!visited[*setIterator]){
+				cost+=weightCostMatrix[currentIndex][*setIterator];
+				visited[*setIterator] = true;
+				vertexQueue.push(*setIterator);
+			}
+		}
+	}
+	return cost;
+}
+
+template<class Type>
+void Graph<Type>::bredthFirstTraversal(Graph<Type>& currentGraph, int vertex){
+	assert(vertex < currentGraph.size());
+	bool visited[MAXIMUM];
+	set<int> connections;
+	set<int>::iterator setIterator;
+	queue<int> vertexQueue;
+
+	fill_n(visited, currentGraph.size(), false);
+	visited[vertex] = true;
+	cout << currentGraph[vertex] << endl;
 	vertexQueue.push(vertex);
 	while(!vertexQueue.empty()){
 		connections = currentGraph.neighbors(vertexQueue.front());
@@ -201,13 +231,12 @@ int Graph<Type>::costTraversal(Graph<Type>& currentGraph, int vertex){
 
 		for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++){
 			if(!visited[*setIterator]){
-				cost+=weightCostMatrix[vertex][*setIterator];
 				visited[*setIterator] = true;
+				cout << currentGraph[*setIterator] << endl;
 				vertexQueue.push(*setIterator);
 			}
 		}
 	}
-	return cost;
 }
 
 
